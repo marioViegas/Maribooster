@@ -33,14 +33,13 @@ module.exports.getUserByUsername = function(username, callback){
   User.findOne(query, callback);
 }
 
-module.exports.addUser = function(newUser, callback){
-  bcrypt.genSalt(10, function(err, salt) {
-    bcrypt.hash(newUser.password, salt, function(err, hash) {
-        if(err) throw err;
-        newUser.password = hash;
-        newUser.save(callback());
-    });
-});
+module.exports.addUser = (newUser, callback) => {
+    bcrypt.genSalt(10)
+        .then((salt) => bcrypt.hash(newUser.password, salt))
+        .then((hash) => {
+            newUser.password = hash;
+            newUser.save(callback);
+        }).catch((err) => console.log('There was an error adding a user.'));
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback){
