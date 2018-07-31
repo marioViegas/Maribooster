@@ -1,9 +1,8 @@
 {
-  "name": "maribooster",
+  "name": "Maribooster",
   "version": "1.0.0",
-  "description": "Boost my instagram account",
+  "description": "Boost your Instagram account",
   "main": "app.js",
-  "repositorie": "https://github.com/marioViegas/Maribooster.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app"
@@ -13,10 +12,11 @@
     "mongoose": "*",
     "bcryptjs": "*",
     "cors": "*",
+    "jsonwebtoken": "*",
+    "body-parser": "*",
     "passport": "*",
-    "passport-jwt": "*",
-    "body-parser": "*"
+    "passport-jwt": "*"
   },
-  "author": "mario.viegas",
+  "author": "Brad Traversy",
   "license": "ISC"
 }
